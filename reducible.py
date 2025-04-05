@@ -119,6 +119,8 @@ def find_word(s, hash_table):
         new_index = (index + step) % len(hash_table)
         if hash_table[new_index] == s:
             return True
+        elif hash_table[new_index] == '':
+            return False
 
         i += 1
         index = new_index
@@ -224,7 +226,7 @@ def main():
     # let us assume it is 10 percent (fairly safe) of the words
     # then M is a prime number that is slightly greater than
     # 0.2 * size of word_list
-    hash_memo = [''] * length
+    hash_memo = [''] * m
 
     # populate the hash_memo with M blank strings
     reducible_words = []
