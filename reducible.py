@@ -83,7 +83,7 @@ def insert_word(s, hash_table):
     if hash_table[index] == '':
         hash_table[index] = s
         return
-    elif hash_table[index] == s:
+    if hash_table[index] == s:
         return  # duplicate
 
     i = 0
@@ -119,7 +119,7 @@ def find_word(s, hash_table):
         new_index = (index + step) % len(hash_table)
         if hash_table[new_index] == s:
             return True
-        elif hash_table[new_index] == '':
+        if hash_table[new_index] == '':
             return False
 
         i += 1
